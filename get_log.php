@@ -53,7 +53,7 @@ if (isLoggedIn()) {
 
 	for ($i = 0; $i < count($logs); ++$i) {
 		$type = 'chat';
-		if (contains('/gtfo', $logs[$i]) OR contains('/ban', $logs[$i]) OR contains('/glist', $logs[$i]) OR contains('/tempban', $logs[$i]) OR contains('/kick', $logs[$i]) OR contains('/kicknoob', $logs[$i]) OR contains('Banning', $logs[$i]) OR contains('has been a VERY naughty, naughty boy', $logs[$i]) OR contains(' been a naughty, naughty boy', $logs[$i]) OR contains(' - Temporarily banned ', $logs[$i])) {
+		if (contains('/gtfo', $logs[$i]) OR contains('/ban', $logs[$i]) OR contains('/glist', $logs[$i]) OR contains('/tempban', $logs[$i]) OR contains('/kick', $logs[$i]) OR contains('/kicknoob', $logs[$i]) OR contains('Banning', $logs[$i]) OR contains('has been a VERY naughty, naughty boy', $logs[$i]) OR contains(' been a naughty, naughty boy', $logs[$i]) OR contains(' - Temporarily banned ', $logs[$i]) OR contains('was automatically kicked', $logs[$i]) OR contains('AutoEject -> ', $logs[$i]) OR contains('has been banned for', $logs[$i])) {
 			if ($_POST['filterKickBans'] == "false") {
 				break;
 			}
@@ -78,7 +78,7 @@ if (isLoggedIn()) {
 				break;
 			}
 			$type = 'errors';
-		} elseif (contains(' [JOIN] ', $logs[$i]) OR contains(' [EXIT] ', $logs[$i]) OR contains('logged in with entity', $logs[$i]) OR contains('lost connection:', $logs[$i]) OR contains('Disconnecting ',$logs[$i])) {
+		} elseif (contains(' [JOIN] ', $logs[$i]) OR contains(' [EXIT] ', $logs[$i]) OR contains('logged in with entity', $logs[$i]) OR contains('lost connection:', $logs[$i]) OR contains('Disconnecting ',$logs[$i]) OR contains(' left the game.', $logs[$i])) {
 			if ($_POST['loginlogout'] == "false") {
 				break;
 			}
@@ -106,6 +106,7 @@ if (isLoggedIn()) {
 		header('Location: ' . INDEX_FILENAME);
 	}
 	echo "You are not authorized! Use <i>/logs</i> on the server to register.<br /><br />";
+	//echo "<p>Alternatively enter a password <form method='POST' action='get_log' name='login'><input name='password' type='password'><button>Submit</button></form></p>";
 	
 	if (isset($_GET['login'])) {
 		if ($_GET['login'] == "notAdmin") {
