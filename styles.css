@@ -1,0 +1,61 @@
+#control {
+	height: 150px;
+	width: 98%;
+	overflow: none;
+	border: 1px solid lightgrey;
+	border-radius: 3px;
+	margin-left: auto;
+    margin-right: auto;
+}
+#control_filters {
+    margin-left: auto;
+    margin-right: auto;
+	width: 98%;
+	overflow: none;
+}
+#logView {
+	margin: 3px;
+	margin-left: auto;
+    margin-right: auto;
+	width: 98%;
+	height: 94%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: 1px solid lightgrey;
+	border-radius: 3px;
+	font-family: "Courier";
+}
+body {
+	padding-top: 5px;
+}
+
+.chat {
+	color: black;
+}
+
+.adminChat {
+	color: CornflowerBlue;
+	font-style: bold;
+}
+
+.commands {
+	color: purple;
+}
+
+.worldEdit {
+	color: blue;
+}
+
+.errors {
+	color: white;
+	background-color: red;
+}
+
+.kickBan {
+	color: red;
+}
+
+.loginLogout {
+	color: sandyBrown;
+	font-style: italic;
+}
