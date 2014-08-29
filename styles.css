@@ -1,11 +1,12 @@
 #control {
-	height: 150px;
+	height: 160px;
 	width: 98%;
 	overflow: none;
 	border: 1px solid lightgrey;
 	border-radius: 3px;
 	margin-left: auto;
     margin-right: auto;
+	padding: 5px;
 }
 #control_filters {
     margin-left: auto;
@@ -13,7 +14,7 @@
 	width: 98%;
 	overflow: none;
 }
-#logView {
+#logView {	
 	margin: 3px;
 	margin-left: auto;
     margin-right: auto;
@@ -23,23 +24,65 @@
 	overflow-x: hidden;
 	border: 1px solid lightgrey;
 	border-radius: 3px;
-	font-family: "Courier";
+	font-family: "Courier New";
 }
 body {
 	padding-top: 5px;
 }
 
 .chat {
-	color: black;
+	display: block;
+	color: blue;
 }
 
 .adminChat {
-	color: CornflowerBlue;
+	display: block;
+	color: #00F;
 	font-style: bold;
 }
 
 .commands {
-	color: purple;
+	display: block;
+	color: #F0F;
+}
+
+.worldEdit {
+	display: block;
+	color: blue;
+}
+
+.errors {
+	display: block;
+	color: red;
+}
+
+.kickBan {
+	display: block;
+	color: white;
+	background-color: red;
+}
+
+.loginLogout {
+	display: block;
+	color: sandyBrown;
+	font-style: italic;
+}
+
+
+
+
+
+.chat {
+	color: blue;
+}
+
+.adminChat {
+	color: #00F;
+	font-style: bold;
+}
+
+.commands {
+	color: #F0F;
 }
 
 .worldEdit {
@@ -47,12 +90,12 @@ body {
 }
 
 .errors {
-	color: white;
-	background-color: red;
+	color: red;
 }
 
 .kickBan {
-	color: red;
+	color: white;
+	background-color: red;
 }
 
 .loginLogout {
