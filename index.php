@@ -76,6 +76,43 @@
 		
 		});
 		 
+		 function applyFilters() {
+			if($('#filterChat').is(':checked')){
+				changeVisibility('chat', 'show')
+			} else {
+				changeVisibility('chat', 'hide')
+			}
+				
+			if($('#filterCommands').is(':checked')){
+				changeVisibility('commands', 'show')
+			} else {
+				changeVisibility('commands', 'hide')
+			}
+			
+			if($('#filterWorldEdit').is(':checked')){
+				changeVisibility('worldEdit', 'show')
+			} else {
+				changeVisibility('worldEdit', 'hide')
+			}
+			if($('#filterErrors').is(':checked')){
+				changeVisibility('errors', 'show')
+			} else {
+				changeVisibility('errors', 'hide')
+			}
+				
+			if($('#filterKickBans').is(':checked')){
+				changeVisibility('kickBan', 'show')
+			} else {
+				changeVisibility('kickBan', 'hide')
+			}
+			
+			if($('#filterLoginLogout').is(':checked')){
+				changeVisibility('loginLogout', 'show')
+			} else {
+				changeVisibility('loginLogout', 'hide')
+			}
+		 }
+		 
 		 
          function init() {
          	resizeBox();
@@ -96,11 +133,12 @@
          	$.post("<?php echo getLogs_FILENAME; ?>", {kbytes: kbytes, chat: filterChat, commands: filterCommands, worldedit: filterWorldEdit, errors: filterErrors, filterKickBans: filterKickBans, loginlogout: filterLoginLogout}).done(function(data) {
          		insertIntoLogView(data);
          		$(function () {
+				  applyFilters();
          		  $('#logView').scrollTop(25000);
          		});
          	});
-         
          }
+		 
 		 function changeVisibility(className, value) {
 			$('.' + className).each(function(i, obj) {
 				if (value == 'hide') {
